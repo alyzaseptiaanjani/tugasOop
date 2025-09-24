@@ -4,17 +4,20 @@ namespace tugasoop_onlineshop
 {
     internal class pakaian : produk
     {
-        public string ukuran { get; set; }
-        public pakaian(string nama, int harga, string ukuran) : base(nama, harga)
+        
+        public pakaian(string nama, int harga, string ukuran, string warna) : base(nama, harga)
         {
             this.ukuran = ukuran;
+            this.warna = warna;
         }
-        public string Ukuran => ukuran;
-        public void displayInfo()
+
+        public string ukuran { get; set; }
+        public string warna { get; set; }
+
+        // overriding method displayInfo
+        public override void displayInfo()
         {
             Console.WriteLine($"Nama Produk: {nama}, Harga: {harga}, Ukuran: {ukuran}");
         }
     }
- 
-
-    }
+}
