@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+
+namespace tugasoop_onlineshop
+{
+    internal class keranjangbelanja
+    {
+        // combosition: keranjangbelanja memiliki banyak produk
+        private List<produk> produks = new List<produk>();
+
+        // overloading method tambahProduk
+        public void tambahProduk(produk p)
+        {
+            produks.Add(p);
+            Console.WriteLine($"{p.nama} berhasil ditambahkan ke keranjang belanja.");
+        }
+        public void tambahProduk(string nama, int harga)
+        {
+            produks.Add(new produk(nama, harga));
+            Console.WriteLine($"{nama} dengan harga {harga} berhasil ditambahkan ke keranjang belanja.");
+
+        }
+        public void tampilkanKeranjang()
+        {
+            Console.WriteLine("Isi Keranjang Belanja:");
+            foreach (var produk in produks)
+            {
+                produk.displayInfo();
+            }
+        }
+
+    }
+}
